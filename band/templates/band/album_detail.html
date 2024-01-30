@@ -1,0 +1,21 @@
+<!-- band/templates/band/album_detail.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ album.title }} - Album Detail</title>
+</head>
+<body>
+    <h1>{{ album.title }} - Album Detail</h1>
+    
+    <p>Release Date: {{ album.release_date }}</p>
+    
+    <h2>Songs:</h2>
+    {% for song in album.song_set.all %}
+        <p>{{ song.title }} - Duration: {{ song.duration }} seconds</p>
+    {% endfor %}
+    
+    <p><a href="{% url 'index' %}">Back to Home</a></p>
+</body>
+</html>
